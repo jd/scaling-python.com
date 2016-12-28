@@ -22,111 +22,111 @@ $(document).ready(function(){
   ///// CAROUSELS
   
   ////////// TESTIMONIALS
-  $("#carousel-testimonials").owlCarousel({
-    loop: true,
-    nav:true,
-    navText: [
-      '<div class="elegant arrow_carrot-left"></div>',
-      '<div class="elegant arrow_carrot-right"></div>'
-      ],
-    items: 1
-    });
+  // $("#carousel-testimonials").owlCarousel({
+  //   loop: true,
+  //   nav:true,
+  //   navText: [
+  //     '<div class="elegant arrow_carrot-left"></div>',
+  //     '<div class="elegant arrow_carrot-right"></div>'
+  //     ],
+  //   items: 1
+  //   });
 
-  ////////// LOGOS
-  $("#carousel-logos").owlCarousel({
-    loop: true,
-    nav:false,
-    dots: false,
-    autoplay:true,
-    autoplayTimeout:2500,
-    autoplayHoverPause:true,
-    items: 4,
-    responsiveClass:true,
-    responsive:{
-        0:{
-            items:2,
-            nav:true
-        },
-        480:{
-            items:3,
-            nav:true
-        },
-        1000:{
-            items:4,
-            nav:true,
-            loop:false
-        }
-    }
-    });
+  // ////////// LOGOS
+  // $("#carousel-logos").owlCarousel({
+  //   loop: true,
+  //   nav:false,
+  //   dots: false,
+  //   autoplay:true,
+  //   autoplayTimeout:2500,
+  //   autoplayHoverPause:true,
+  //   items: 4,
+  //   responsiveClass:true,
+  //   responsive:{
+  //       0:{
+  //           items:2,
+  //           nav:true
+  //       },
+  //       480:{
+  //           items:3,
+  //           nav:true
+  //       },
+  //       1000:{
+  //           items:4,
+  //           nav:true,
+  //           loop:false
+  //       }
+  //   }
+  //   });
 
-  ////////// TEAM
-  $("#carousel-team").owlCarousel({
-      loop: false,
-      nav:false,
-      items: 8,
-      dots: false,
-    });
+  // ////////// TEAM
+  // $("#carousel-team").owlCarousel({
+  //     loop: false,
+  //     nav:false,
+  //     items: 8,
+  //     dots: false,
+  //   });
 
-  ////////// GALLERY
-  $("#carousel-gallery").owlCarousel({
-    loop: true,
-    nav:false,
-    items: 4,
-    responsive:{
-        0:{
-            items:1,
-            nav:true
-        },
-        350:{
-            items:2,
-            nav:true
-        },
-        560:{
-            items:3,
-            nav:true
-        },
-        1000:{
-            items:4,
-            nav:true,
-            loop:false
-        }
-    }
-    });
+  // ////////// GALLERY
+  // $("#carousel-gallery").owlCarousel({
+  //   loop: true,
+  //   nav:false,
+  //   items: 4,
+  //   responsive:{
+  //       0:{
+  //           items:1,
+  //           nav:true
+  //       },
+  //       350:{
+  //           items:2,
+  //           nav:true
+  //       },
+  //       560:{
+  //           items:3,
+  //           nav:true
+  //       },
+  //       1000:{
+  //           items:4,
+  //           nav:true,
+  //           loop:false
+  //       }
+  //   }
+  //   });
 
   ////////// FUN FACTS
-  $("#carousel-funfacts").owlCarousel({
-    loop: false,
-    nav: false,
-    dots: false,
-    items: 6,
-    });
+  // $("#carousel-funfacts").owlCarousel({
+  //   loop: false,
+  //   nav: false,
+  //   dots: false,
+  //   items: 6,
+  //   });
   
   ///// BUTTONS DEPRESSED FIX
   $(".btn").mouseup(function(){$(this).blur();});
   $("#navbar .navbar-nav *").mouseup(function(){$(this).blur();});
   
   ///// FUN FACTS COUNTUP
-  var options = {
-  useEasing : true,
-  useGrouping : false,
-  separator : ',',
-  decimal : '.',
-  prefix : '',
-  suffix : ''
-  }
-  var count01 = new countUp("count01", 0, 290, 0, 3, options);
-  var count02 = new countUp("count02", 0, 8, 0, 4, options);
-  var count03 = new countUp("count03", 0, 17, 0, 5, options);
-    var count04 = new countUp("count04", 0, 70, 0, 2.5, options);
-    var count05 = new countUp("count05", 0, 3, 0, 1, options);
-    var count06 = new countUp("count06", 0, 537, 0, 4, options);
+  // var options = {
+  // useEasing : true,
+  // useGrouping : false,
+  // separator : ',',
+  // decimal : '.',
+  // prefix : '',
+  // suffix : ''
+  // }
+  // var count01 = new countUp("count01", 0, 290, 0, 3, options);
+  // var count02 = new countUp("count02", 0, 8, 0, 4, options);
+  // var count03 = new countUp("count03", 0, 17, 0, 5, options);
+  //   var count04 = new countUp("count04", 0, 70, 0, 2.5, options);
+  //   var count05 = new countUp("count05", 0, 3, 0, 1, options);
+  //   var count06 = new countUp("count06", 0, 537, 0, 4, options);
 
-    $('#count01').on('inview', function(event, isInView, visiblePartX, visiblePartY) {if (isInView) {count01.start();} return false;});
-    $('#count02').on('inview', function(event, isInView, visiblePartX, visiblePartY) {if (isInView) {count02.start();} return false;});
-    $('#count03').on('inview', function(event, isInView, visiblePartX, visiblePartY) {if (isInView) {count03.start();} return false;});
-    $('#count04').on('inview', function(event, isInView, visiblePartX, visiblePartY) {if (isInView) {count04.start();} return false;});
-    $('#count05').on('inview', function(event, isInView, visiblePartX, visiblePartY) {if (isInView) {count05.start();} return false;});
-    $('#count06').on('inview', function(event, isInView, visiblePartX, visiblePartY) {if (isInView) {count06.start();} return false;});
+    // $('#count01').on('inview', function(event, isInView, visiblePartX, visiblePartY) {if (isInView) {count01.start();} return false;});
+    // $('#count02').on('inview', function(event, isInView, visiblePartX, visiblePartY) {if (isInView) {count02.start();} return false;});
+    // $('#count03').on('inview', function(event, isInView, visiblePartX, visiblePartY) {if (isInView) {count03.start();} return false;});
+    // $('#count04').on('inview', function(event, isInView, visiblePartX, visiblePartY) {if (isInView) {count04.start();} return false;});
+    // $('#count05').on('inview', function(event, isInView, visiblePartX, visiblePartY) {if (isInView) {count05.start();} return false;});
+    // $('#count06').on('inview', function(event, isInView, visiblePartX, visiblePartY) {if (isInView) {count06.start();} return false;});
   
   ///// DYNAMIC MODAL CONTENT
   $(function() {
