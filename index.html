@@ -294,9 +294,11 @@
         });
     }
 
-    $(function () {
-        $("form#contact-form").submit(sendSample);
-    });
+    $('form#contact-form').validator().on('submit', function (e) {
+      if (!e.isDefaultPrevented()) {
+        return sendSample(e);
+      }
+    })
     </script>
 
   </body>
