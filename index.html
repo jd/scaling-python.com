@@ -1,17 +1,23 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-    <title>Scaling Python</title>
-    <link rel="icon" type="image/png"
-          href="img/the-hacker-guide-to-scaling-python.png">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,700,900" rel="stylesheet" type="text/css">
-    <link href="css/icons/elegant.min.css" rel="stylesheet" type="text/css">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <link href="css/style-default.css" rel="stylesheet">
-    <link href="css/style-scapy.min.css" rel="stylesheet">
-    <link href="css/plugins/plugins.min.css" rel="stylesheet">
+    <title>The Hacker's Guide to Scaling Python</title>
+    <link rel="icon" type="image/png" href="img/the-hacker-guide-to-scaling-python.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The book that teaches you how to start writing scalable, distributed Python applications.">
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@juldanjou" />
+    <meta name="twitter:title" content="Scaling Python" />
+    <meta name="twitter:description" content="The book that teaches you how to start writing scalable, distributed Python applications." />
+    <meta name="twitter:image" content="https://scaling-python.com/img/the-hacker-guide-to-scaling-python.png" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/stack-interface.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/iconsmind.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/theme-red.min.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/custom.min.css" rel="stylesheet" type="text/css" media="all">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700%7CMerriweather:300,300i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script type="text/javascript">
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -22,284 +28,1023 @@
       ga('send', 'pageview');
     </script>
   </head>
-  <body>
-    <section id="header">
-      <div class="overlay">
-        <div class="container">
-          <header style="padding-top: 50px;">
-            <h1>
-              <span class="header-txt-small">Push
-              <span class="header-txt-color">Python</span>
-              to the next level</span>
-            </h1>
-            <h3>Support large workload; millions of users.</h3>
-          </header>
+  <body class=" ">
+    <a id="start"></a>
+    <div class="main-container">
+      <!-- min-height so the book cover fits -->
+      <section class="cover height-50 imagebg switchable" data-overlay="8"
+               style="min-height: 500px;">
+        <div class="background-image-holder" style="background: url(&quot;img/background-top.jpg&quot;); opacity: 1;">
+          <img alt="background" src="img/background-top.jpg" />
         </div>
-      </div>
-    </section>
-
-    <section id="about">
-      <div class="about-cont about-to-right">
-        <div class="container">
+        <div class="container pos-vertical-center">
           <div class="row">
-            <div class="col-md-6">
-              <h3>What is this book about?</h3>
-              <p>
-                During those last years, I've been able to contribute to the
-                biggest open source project written in Python – namely
-                <a href="http://openstack.org">OpenStack</a>. During that time,
-                I had the opportunity to learn a lot of things about writing
-                scalable code, by reaching the boundaries of Python and its
-                ecosystem, and by rubbing shoulders with some of the greatest
-                Python developers – some of them being developer of the Python
-                language itself.
-              </p>
-              <p>
-                After doing tons of code reviews and mentoring with my fellow
-                engineers, I decided it was time to teach everyone what should
-                be known about Python to achieve large scalability.
-              </p>
+            <div class="col-md-7">
+              <div class="switchable__text">
+                <h1>
+                  Python applications can handle millions of requests.
+                </h1>
+                <p class="lead">
+                  <em>Scaling Python</em>, the book that teaches you how to
+                  start writing scalable, distributed Python applications.
+                </p>
+                <br>
+                <p>
+                  <a class="btn type--uppercase inner-link" href="#faq">
+                    <span class="btn__text">
+                      FAQ
+                    </span>
+                  </a>
+                  <a class="btn btn--primary type--uppercase inner-link" href="#packages">
+                    <span class="btn__text">
+                      Buy Now
+                    </span>
+                  </a>
+                </p>
+              </div>
             </div>
-            <div class="col-md-6 about-img">
-              <a href="https://thehackerguidetopython.com">
-                <img src="img/the-hacker-guide-to-scaling-python.png"
-                     alt="Book"
-                     style="max-width: 90%;">
-              </a>
+            <div class="col-md-5 col-xs-12 text-center">
+              <img alt="image" src="img/the-hacker-guide-to-scaling-python.png" />
             </div>
           </div>
+          <!--end of row-->
         </div>
-    </section>
-
-    <section id="about">
-      <!-- ABOUT CONTAINER - TEXT ALIGN TO RIGHT -->
-      <div class="about-cont about-to-left">
+        <!--end of container-->
+      </section>
+      <section class="text-center">
         <div class="container">
           <div class="row">
-            <div class="col-md-6 about-img">
-              <img src="img/python-scalability.png"
-                   style="max-width: 90%;
-                          margin-top: 40px;">
-            </div>
-            <div class="col-md-6">
-
-              <h3>Distributed and resilient applications with Python</h3>
-              <p>
-                In <em>The Hacker's Guide to Scaling Python</em> I want to
-                share what I learned those last years working on distributed
-                applications in <a href="http://python.org">Python</a>. It
-                takes years of practice, research, trial and errors to build
-                experience and knowledge along the way. Simple questions such
-                as "How do I make my code faster?" or "How do I make sure there
-                is no bottleneck?" cost hours to find good answers. Without
-                enough background on the topic, you'll never be sure that any
-                answer you'll come up with will be correct.
+            <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+              <h2>Learn how to build large Python applications</h2>
+              <p class="lead">
+                Whether you’re building your first distributed application or
+                you want to make your code goes faster and able to handle
+                thousands of requests, this book is for you.
               </p>
             </div>
           </div>
+          <!--end of row-->
         </div>
-      </div>
-    </section>
-
-    <section id="contact" class="caption-margin"> --
-      <div class="container">
-        <h2>Be the first to know when it's ready</h2>
-
-        <div class="text-center" style="max-width: 80%; margin: auto;">
-          <form class="form-horizontal" id="contact-form" role="form"
-                data-toggle="validator">
-            <div class="form-group col-sm-5 col-xs-12 inline-input">
-              <div class="input-group col-sm-12 col-xs-12">
-                <div class="input-group-addon"><span class="elegant icon_profile"></span></div>
-                <input type="text" class="form-control" id="name" placeholder="your name" data-minlength="5" required="">
-              </div>
-              <!-- ERROR MESSAGE BOX -->
-              <div class="help-block with-errors"></div>
-            </div>
-            <div class="form-group col-sm-5 col-xs-12 inline-input">
-              <div class="input-group col-sm-12 col-xs-12">
-                <div class="input-group-addon"><span class="elegant icon_mail_alt"></span></div>
-                <input type="email" class="form-control" id="email" placeholder="e-mail adress" required="">
-              </div>
-              <div class="help-block with-errors"></div>
-            </div>
-            <div class="form-group col-sm-2 col-xs-12 inline-input">
-              <button type="submit" class="btn btn-success disabled"
-                      style="width: 100%;">
-                Get notified
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <section id="about">
-      <div class="about-cont">
+        <!--end of container-->
+      </section>
+      <section>
         <div class="container">
           <div class="row">
-            <div class="col-md-8">
-              <h3>About the author</h3>
-              <p>
+            <div class="col-sm-4">
+              <div class="feature feature-3 boxed boxed--lg boxed--border text-center">
+                <i class="icon icon--lg icon-Umbrella-2"></i>
+                <h4>Build for Resiliency</h4>
+                <p>
+                  Today's applications run on large and distributed
+                  infrastructures. They need to handle failure without
+                  blinking. In an environment where anything could go wrong,
+                  how do you design your code to handle those failures?
+                </p>
+              </div>
+              <!--end feature-->
+            </div>
+            <div class="col-sm-4">
+              <div class="feature feature-3 boxed boxed--lg boxed--border text-center">
+                <i class="icon icon--lg icon-Cube-Molecule"></i>
+                <h4>Design</h4>
+                <p>
+                  Learn how to plan an architecture that has no bottleneck. Get
+                  straight answers to your conception questions and solutions
+                  that work and solve concrete cases.
+                </p>
+              </div>
+              <!--end feature-->
+            </div>
+            <div class="col-sm-4">
+              <div class="feature feature-3 boxed boxed--lg boxed--border text-center">
+                <i class="icon icon--lg icon-Brain"></i>
+                <h4>Best practice</h4>
+                <p>
+                  Discover how you can write code that will flawlessly perform
+                  when distributed at large scale. From programming to
+                  profiling, optimizing and testing, the book covers every
+                  aspect.
+                </p>
+              </div>
+              <!--end feature-->
+            </div>
+            <!--end of row-->
+          </div>
+        </div>
+        <br>
+        <!--end of container-->
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="feature feature-3 boxed boxed--lg boxed--border text-center">
+                <i class="icon icon--lg icon-Blackboard"></i>
+                <h4>Practical Examples</h4>
+                <p>
+                  Every theme is covered with illustrating examples. Modify the
+                  provided examples as you wish to learn and understand how
+                  they work. There is no better way to learn something than
+                  toying with it, right?
+                </p>
+              </div>
+              <!--end feature-->
+            </div>
+            <div class="col-sm-4">
+              <div class="feature feature-3 boxed boxed--lg boxed--border text-center">
+                <i class="icon icon--lg icon-Line-Chart2"></i>
+                <h4>Performance</h4>
+                <p>
+                  Let's talk performance: how to write faster Python code,
+                  profile it, and optimize it. Read about concrete use-cases on
+                  how to enhance slow applications.
+                </p>
+              </div>
+              <!--end feature-->
+            </div>
+            <div class="col-sm-4">
+              <div class="feature feature-3 boxed boxed--lg boxed--border text-center">
+                <i class="icon icon--lg icon-Data-Network"></i>
+                <h4>Batteries Included</h4>
+                <p>
+                  Use the included Docker image to replay all the examples
+                  presented in the book. The Docker image provides the complete
+                  Python environment that you need in order to execute the
+                  examples. Use the notebooks to run then in a click from your
+                  Web browser.
+                </p>
+              </div>
+              <!--end feature-->
+            </div>
+          </div>
+          <!--end of row-->
+        </div>
+        <!--end of container-->
+      </section>
+      <section class=" bg--dark text-center">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+              <h2>Learn From the Experts</h2>
+              <p class="lead">
+                <em>Scaling Python</em> includes seven interviews from
+                experienced Python developers. They share their know-how and
+                wisdom on the various themes covered in the book.
+              </p>
+            </div>
+          </div>
+          <!--end of row-->
+        </div>
+        <!--end of container-->
+      </section>
+
+      <section class=" bg--secondary">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="feature feature-5 boxed boxed--border">
+                <img src="img/mabaakouk.png" style="max-width: 100px;">
+                <div class="feature__body">
+                  <h4>Mehdi Abaakouk</h4>
+                  <p>
+                    Mehdi is a French free software hacker, working as a Senior
+                    Software Engineer at Red Hat. He has been using Linux for
+                    almost twenty years now and he has been a Python developer
+                    for ten years. He works daily on OpenStack, the largest
+                    open-source project using Python. He also regularly builds
+                    and contribute to distributed applications and is
+                    responsible for several widely used Python libraries –
+                    <em>Cotyledon</em>, <em>oslo.messaging</em>, etc.
+                  </p>
+                </div>
+              </div>
+              <!--end feature-->
+            </div>
+            <div class="col-sm-6">
+              <div class="feature feature-5 boxed boxed--border">
+                <img src="img/cdent.png" style="max-width: 100px;;">
+                <div class="feature__body">
+                  <h4>Chris Dent</h4>
+                  <p>
+                    Chris Dent is a Staff Engineer at VMware, a member of the
+                    OpenStack Technical Committee, and an HTTP connoisseur. He
+                    has been using Python for more than fifteen years now and
+                    is an expert on WSGI. He has an extensive knowledge about
+                    REST API – he is one of the early organizers of the
+                    OpenStack API working group. Chris has, among other things,
+                    created Gabbi, a fabulous Python testing tool for HTTP.
+                  </p>
+                </div>
+              </div>
+              <!--end feature-->
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="feature feature-5 boxed boxed--border">
+                <img src="img/harlowja.png" style="max-width: 100px;;">
+                <div class="feature__body">
+                  <h4>Joshua Harlow</h4>
+                  <p>
+                    Joshua is a highly experienced engineer in distributed
+                    systems, working at GoDaddy. He maintains a few Python
+                    libraries, such as <em>Kazoo</em> (ZooKeeper client) or
+                    <em>TaskFlow</em> (distributed tasks management). He is
+                    very knowledgeable on principles that make Python
+                    application resilient and faults tolerant.
+                  </p>
+                </div>
+              </div>
+              <!--end feature-->
+            </div>
+            <div class="col-sm-6">
+              <div class="feature feature-5 boxed boxed--border">
+                <img src="img/ninada.png" style="max-width: 100px;;">
+                <div class="feature__body">
+                  <h4>Naoki Inada</h4>
+                  <p>
+                    Naoki is a Researcher and Architect at KLab. He also
+                    happens to be one of the CPython developers. He worked on
+                    several significant features in CPython, such as
+                    <em>asyncio</em>. He has a few opinions on Python and other
+                    programming languages when it comes to asynchronous
+                    workflows.
+                  </p>
+                </div>
+              </div>
+              <!--end feature-->
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="feature feature-5 boxed boxed--border">
+                <img src="img/vstinner.png" style="max-width: 100px;;">
+                <div class="feature__body">
+                  <h4>Victor Stinner</h4>
+                  <p>
+                    Victor is a long time CPython core developer, working on
+                    the language itself for several years now. He is well known
+                    in the community for working on making CPython faster and
+                    leads several performance-oriented projects. He likes to
+                    talk about optimizations, profiling, and performance when
+                    using Python, and how to make the right decisions.
+                  </p>
+                </div>
+              </div>
+              <!--end feature-->
+            </div>
+            <div class="col-sm-6">
+              <div class="feature feature-5 boxed boxed--border">
+                <img src="img/jmyers.png" style="max-width: 100px;;">
+                <div class="feature__body">
+                  <h4>Jason Myers</h4>
+                  <p>
+                    Jason is a Python developer, working as a Software Engineer
+                    at Juice Analytics. He wrote an entire book on SQLAlchemy,
+                    the well-known Python SQL library (<em>Essential SQLAlchemy
+                    </em> <small>(O'Reilly)</small>) He worked on cloud
+                    computing platforms, as a Web developer, and as a data
+                    engineer.
+                  </p>
+                </div>
+              </div>
+              <!--end feature-->
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-offset-3 col-sm-6">
+              <div class="feature feature-5 boxed boxed--border">
+                <img src="img/ajacobmonier.png" style="max-width: 100px;;">
+                <div class="feature__body">
+                  <h4>Alexys Jacob-Monier</h4>
+                  <p>
+                    Alexys is the CTO of 1000mercis and is part of the
+                    open-source software community for a few years now. He
+                    regularly gives speeches at Python conferences (PyCon) and
+                    talks about how to leverage Python when distributing
+                    applications. He writes, maintains and operates highly
+                    distributed Python applications.
+                  </p>
+                </div>
+              </div>
+              </div>
+              <!--end feature-->
+            </div>
+          </div>
+          <!--end of row-->
+        </div>
+        <!--end of container-->
+      </section>
+      <section class="imageblock switchable feature-large">
+        <div class="imageblock__content col-md-5 col-sm-4 pos-right">
+          <div class="background-image-holder" style="background: url(&quot;img/jd-background.jpg&quot;); opacity: 1;">
+            <img alt="image" src="img/jd-background.jpg">
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-sm-8 text-justify">
+              <h2>About the Author</h2>
+              <img src="img/jd.jpg" style="float: left; width: 120px;
+                                           margin-right: 30px;
+                                           border-radius: 100px;">
+              <p class="lead">
                 Hi, I'm <a href="https://julien.danjou.info">Julien Danjou</a>,
-                a Free Software hacker for more than 16 years now. I wear a lot
-                of different hats in the open source ecosystem, and maybe you
-                already encountered me or used one of my software: I am a
-                <a href="http://debian.org">Debian</a> developer for 15 years,
-                a <a href="http://freedesktop.org">Freedesktop</a> contributor,
-                a <a href="http://www.gnu.org/software/emacs/">GNU Emacs</a>
-                committer, and the <a href="http://awesomewm.org">awesome</a>
-                window manager creator.
+                a Free Software hacker for close to twenty years now. I wear a
+                lot of different hats in the Open Source community, and maybe
+                you already encountered me or used one of my software. Debian
+                developer for fifteen years, Freedesktop contributor, GNU Emacs
+                committer and the awesome window manager creator are activities
+                I've been doing in my career.
               </p>
-              <p>
-                These last 10 years, I've been developing software using
-                Python. Five years ago, I started to work on
-                <a href="http://openstack.org">OpenStack</a>, a cloud platform
-                written in Python and the largest existing open source Python
-                code base (<strong>2.5 millions of lines of Python</strong>) –
-                where I am one of the <em>Project Team Leaders</em> and
-                acted as a member of the <em>Technical Committee</em>.
-              </p>
-              <p>
-                This book is the next step after
-                <em><a href="https://thehackerguidetopython.com">The Hacker's
-                Guide to Python</a></em> – my previous book originally
-                published in 2014 and appraised by thousands of Python
-                developers. In this, I wrote everything I knew about writing
-                state of the art Python code, for people that want to learn
-                Python beyond basics.
+              <p class="lead">
+                These last ten years, I've been developing software using
+                Python. I already spent six years working on OpenStack, a
+                distributed cloud platform written in Python and the largest
+                existing open-source Python code base (2.5 millions of lines of
+                Python) – where I was both Project Team Leader and Technical
+                Committee Member. Nowadays, I maintain Gnocchi, an open-source
+                distributed time series database.
               </p>
             </div>
-            <div class="col-md-offset-1 col-md-3 about-img">
-              <img class="avatar" src="img/jd-office.jpg">
+          </div>
+          <!--end of row-->
+        </div>
+        <!--end of container-->
+      </section>
+
+      <section class=" bg--secondary imageblock feature-large">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 col-sm-6">
+              <h2>Get the sample chapter</h2>
+              <p class="lead">
+                Not convinced yet? Get the table of contents and read the beginning of the book for free:
+              </p>
+              <script async id="_ck_303357" src="https://forms.convertkit.com/303357?v=6"></script>
+              <!--end of feature group-->
+            </div>
+          </div>
+          <!--end of row-->
+        </div>
+        <!--end of container-->
+        <div class="imageblock__content col-md-4 col-sm-3 pos-right">
+          <div class="background-image-holder" style="background: url(&quot;img/scapy-ipad.jpg&quot;); opacity: 1;">
+            <img alt="image" src="img/scapy-ipad.jpg">
+          </div>
+        </div>
+      </section>
+
+      <section class="text-center bg--primary" id="packages">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-10 col-md-8">
+              <h1>Pick Your Package</h1>
+              <p class="lead">
+                <em>Scaling Python</em> comes in different flavors. Pick the one
+                that suits your needs the best.
+              </p>
+            </div>
+          </div>
+          <!--end of row-->
+        </div>
+        <!--end of container-->
+      </section>
+
+      <section class="switchable ">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6 col-md-7">
+              <div class="switchable__text">
+                <div class="switchable__text">
+                  <h2>The Complete Package</h2>
+                  <img src="img/package-enterprise.png">
+                  <p class="lead">
+                    The big deal. Everything you need to learn advanced
+                    techniques to write amazing Python code. Include, the
+                    ebook, the future updates, all the examples and a Docker
+                    pre-loaded with everything you need to run the examples
+                    through command line or a Web interface. Plus a license to
+                    use with your team. Don't learn alone!
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-xs-12">
+              <div class="pricing pricing-1 boxed boxed--lg boxed--border">
+                <br>
+                <h3>Enterprise Edition</h3>
+                <span class="h2">
+                  <strike>$199</strike> <strong>$169</strong>
+                </span>
+                <span class="label bg--primary">-15% Launch Offer</span>
+                <hr>
+                <ul>
+                  <li>
+                    <i class="icon icon--xs icon-Book"></i>
+                    &nbsp;
+                    <span>The ebook in PDF, HTML, MOBI and EPUB formats</span>
+                  </li>
+                  <li>
+                    <i class="icon icon--xs icon-Speach-Bubble"></i>
+                    &nbsp;
+                    <span>7 experts interviews</span>
+                  </li>
+                  <li>
+                    <i class="icon icon--xs icon-Next"></i>
+                    &nbsp;
+                    <span>Future editions of the ebook</span>
+                  </li>
+                  <li>
+                    <i class="icon icon--xs icon-Blackboard"></i>
+                    &nbsp;
+                    <span>All code examples ready to run</span>
+                  </li>
+                  <li>
+                    <i class="icon icon--xs icon-Data-Network"></i>
+                    &nbsp;
+                    <span>Docker image with the complete environment to run all
+                      the book examples</span>
+                  </li>
+                  <li>
+                    <i class="icon icon--xs icon-Navigation-LeftWindow"></i>
+                    &nbsp;
+                    <span>Web interface to run all the examples as notebook –
+                      easy editing and toying</span>
+                  </li>
+                  <li>
+                    <i class="icon icon--xs icon-Diploma-2"></i>
+                    &nbsp;
+                    <span>License to share with 10 members of your team</span>
+                  </li>
+                </ul>
+                <a class="btn btn--primary" href="https://gum.co/scapy-enterprise/scaling?wanted=true" data-gumroad-single-product="true">
+                  <span class="btn__text">
+                    Purchase
+                  </span>
+                </a>
+              </div>
+              <!--end of pricing-->
+            </div>
+          </div>
+          <!--end of row-->
+        </div>
+        <!--end of container-->
+      </section>
+      <section class="text-center bg--secondary">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="feature feature-3 boxed boxed--lg boxed--border">
+                <img src="img/scapy-kindle.png" style="max-height: 150px;">
+                <h4>The ebook</h4>
+                <p>
+                  300 pages of solid advice in PDF, HTML, EPUB and MOBI
+                  formats. Read it anywhere. DRM free.
+                </p>
+              </div>
+              <!--end feature-->
+            </div>
+            <div class="col-sm-4">
+              <div class="feature feature-3 boxed boxed--lg boxed--border">
+                <img src="img/interview-cards.png" style="max-height: 150px;">
+                <h4>Interviews</h4>
+                <p>
+                  Seven interviews with Python experts. They will teach you a
+                  few things by sharing their wisdom.
+                </p>
+              </div>
+              <!--end feature-->
+            </div>
+            <div class="col-sm-4">
+              <div class="feature feature-3 boxed boxed--lg boxed--border">
+                <img src="img/examples.png" style="max-height: 150px;">
+                <h4>Examples</h4>
+                <p>
+                  Ready to be used examples, straight from the book. Replay
+                  them as you wish, edit, play, learn!
+                </p>
+              </div>
+              <!--end feature-->
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="feature feature-3 boxed boxed--lg boxed--border">
+                <img src="img/scapy-new-editions.png" style="max-height: 150px;">
+                <h4>New Editions</h4>
+                <p>
+                  You'll get the new editions of the book as soon as they are
+                  released.
+                </p>
+              </div>
+              <!--end feature-->
+            </div>
+            <div class="col-sm-4">
+              <div class="feature feature-3 boxed boxed--lg boxed--border">
+                <img src="img/docker-sticker.png" style="max-height: 150px;">
+                <h4>Docker Image</h4>
+                <p>
+                  A complete Docker image with the right environment
+                  (Python 3.6) and all the examples already loaded. Every
+                  component used in the book is pre-installed and ready to be
+                  used.
+                </p>
+              </div>
+              <!--end feature-->
+            </div>
+            <div class="col-sm-4">
+              <div class="feature feature-3 boxed boxed--lg boxed--border">
+                <img src="img/browser-jupyter.png" style="max-height: 150px;">
+                <h4>Web Interface</h4>
+                <p>
+                  All examples of the book are provided in a Web interface as
+                  notebooks. You can edit them and replay them directly into
+                  your Web browser.
+                </p>
+              </div>
+              <!--end feature-->
+            </div>
+          </div>
+          <!--end of row-->
+          <br>
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="feature feature-3 boxed boxed--lg boxed--border">
+                <img src="img/certificate.png" style="max-height: 150px;">
+                <h4>Team License</h4>
+                <p>
+                  Share the ebook and all the package contents with your team.
+                  Share with up to 10 people so your fellow developers can
+                  build great stuff too.
+                </p>
+              </div>
+              <!--end feature-->
             </div>
           </div>
         </div>
-      </div>
-    </section>
+        <!--end of container-->
+      </section>
 
-    <!-- =========================
-    FORM MODALS
-    ============================== -->
-    <!-- SUCCES - MESSAGE SEND -->
-    <div class="modal fade" id="FormSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-
-          <div class="modal-body">
-            <p class="formModal">
-
-              <!-- ICON -->
-              <span class="elegant icon_check_alt2"></span><br/>
-
-              <!-- MODAL CONTENT BIG -->
-              <span class="desc">You're in!</span><br/>
-            </p>
+      <section class="switchable ">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6 col-md-7">
+              <div class="switchable__text">
+                <div class="switchable__text">
+                  <h2>The Best-Seller</h2>
+                  <img src="img/package-standard.png">
+                  <p class="lead">
+                    The standard package. Everything you need to learn advanced
+                    techniques to write amazing Python code. Include, the
+                    ebook, the future updates, all the code and a Docker
+                    pre-loaded with everything you need to run the examples.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-xs-12">
+              <div class="pricing pricing-1 boxed boxed--lg boxed--border">
+                <br>
+                <h3>Standard Edition</h3>
+                <span class="h2">
+                  <strike>$89</strike> <strong>$75</strong>
+                </span>
+                <span class="label bg--primary">-15% Launch Offer</span>
+                <hr>
+                <ul>
+                  <li>
+                    <i class="icon icon--xs icon-Book"></i>
+                    &nbsp;
+                    <span>The ebook in PDF, HTML, MOBI and EPUB formats</span>
+                  </li>
+                  <li>
+                    <i class="icon icon--xs icon-Speach-Bubble"></i>
+                    &nbsp;
+                    <span>7 experts interviews</span>
+                  </li>
+                  <li>
+                    <i class="icon icon--xs icon-Next"></i>
+                    &nbsp;
+                    <span>Future editions of the ebook</span>
+                  </li>
+                  <li>
+                    <i class="icon icon--xs icon-Blackboard"></i>
+                    &nbsp;
+                    <span>All code examples ready to run</span>
+                  </li>
+                  <li>
+                    <i class="icon icon--xs icon-Data-Network"></i>
+                    &nbsp;
+                    <span>Docker image with the complete environment to run all
+                      the book examples</span>
+                  </li>
+                </ul>
+                <a class="btn btn--primary" href="https://gum.co/scapy-standard/scaling?wanted=true" data-gumroad-single-product="true">
+                  <span class="btn__text">
+                    Purchase
+                  </span>
+                </a>
+              </div>
+              <!--end of pricing-->
+            </div>
           </div>
-
-          <!-- CLOSE THE MODAL BUTTON -->
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary btn-ok" data-dismiss="modal">That's great!</button>
-          </div>
-
+          <!--end of row-->
         </div>
-      </div>
+        <!--end of container-->
+      </section>
+            <section class="text-center bg--secondary">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="feature feature-3 boxed boxed--lg boxed--border">
+                <img src="img/scapy-kindle.png" style="max-height: 150px;">
+                <h4>The ebook</h4>
+                <p>
+                  300 pages of solid advice in PDF, HTML, EPUB and MOBI
+                  formats. Read it anywhere. DRM free.
+                </p>
+              </div>
+              <!--end feature-->
+            </div>
+            <div class="col-sm-4">
+              <div class="feature feature-3 boxed boxed--lg boxed--border">
+                <img src="img/interview-cards.png" style="max-height: 150px;">
+                <h4>Interviews</h4>
+                <p>
+                  Seven interviews with Python experts. They will teach you a
+                  few things by sharing their wisdom.
+                </p>
+              </div>
+              <!--end feature-->
+            </div>
+            <div class="col-sm-4">
+              <div class="feature feature-3 boxed boxed--lg boxed--border">
+                <img src="img/examples.png" style="max-height: 150px;">
+                <h4>Examples</h4>
+                <p>
+                  Ready to be used examples, straight from the book. Replay
+                  them as you wish, edit, play, learn!
+                </p>
+              </div>
+              <!--end feature-->
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="feature feature-3 boxed boxed--lg boxed--border">
+                <img src="img/scapy-new-editions.png" style="max-height: 150px;">
+                <h4>New Editions</h4>
+                <p>
+                  You'll get the new editions of the book as soon as they are
+                  released.
+                </p>
+              </div>
+              <!--end feature-->
+            </div>
+            <div class="col-sm-4">
+              <div class="feature feature-3 boxed boxed--lg boxed--border">
+                <img src="img/docker-sticker.png" style="max-height: 150px;">
+                <h4>Docker Image</h4>
+                <p>
+                  A complete Docker image with the right environment
+                  (Python 3.6) and all the examples already loaded. Every
+                  component used in the book is pre-installed and ready to be
+                  used.
+                </p>
+              </div>
+              <!--end feature-->
+            </div>
+          </div>
+          <!--end of row-->
+        </div>
+        <!--end of container-->
+      </section>
+
+      <section class="switchable ">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6 col-md-7">
+              <div class="switchable__text">
+                <div class="switchable__text">
+                  <h2>The Paperback</h2>
+                  <div class="row">
+                    <div class="col-md-4">
+                      <img src="img/package-oldschool.png">
+                    </div>
+                    <div class="col-md-offset-1 col-md-7">
+                      <p class="lead">
+                        Just the book, printed on a dead tree and in electronic
+                        formats. Learn the advanced techniques to scale Python and
+                        get ready to write awesome apps!
+                      </p>
+                      <p>
+                        <small>
+                          (This purchase will go through Lulu, who do not
+                          distribute the electronic format. Forward your Lulu
+                          receipt to <a href="julien+scapy@danjou.info">me</a>
+                          to get the electronic version.)
+                        </small>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-xs-12">
+              <div class="pricing pricing-1 boxed boxed--lg boxed--border">
+                <br>
+                <h3>Old-School Edition</h3>
+                <span class="h2">
+                  <strike>$49</strike> <strong>$43</strong>
+                </span>
+                <span class="label bg--primary">-15% Launch Offer</span>
+                <hr>
+                <ul>
+                  <li>
+                    <i class="icon icon--xs icon-Open-Book"></i>
+                    &nbsp;
+                    <span>The book printed in paperback format, delivered to
+                      your door</span>
+                  </li>
+                  <li>
+                    <i class="icon icon--xs icon-Book"></i>
+                    &nbsp;
+                    <span>The ebook in PDF, HTML, MOBI and EPUB formats</span>
+                  </li>
+                  <li>
+                    <i class="icon icon--xs icon-Speach-Bubble"></i>
+                    &nbsp;
+                    <span>7 experts interviews</span>
+                  </li>
+                </ul>
+                <a class="btn btn--primary" href="http://www.lulu.com/commerce/index.php?fBuyContent=21930016">
+                  <span class="btn__text">
+                    Purchase
+                  </span>
+                </a>
+              </div>
+              <!--end of pricing-->
+            </div>
+          </div>
+          <!--end of row-->
+        </div>
+        <!--end of container-->
+      </section>
+
+      <section class="switchable ">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6 col-md-7">
+              <div class="switchable__text">
+                <div class="switchable__text">
+                  <h2>The Book</h2>
+                  <div class="row">
+                    <div class="col-md-4">
+                      <img src="img/package-starter.png">
+                    </div>
+                    <div class="col-md-offset-1 col-md-7">
+                      <p class="lead">
+                        Just the book in electronic version. Learn the advanced
+                        techniques to scale Python and get ready to write
+                        awesome apps!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-xs-12">
+              <div class="pricing pricing-1 boxed boxed--lg boxed--border">
+                <br>
+                <h3>Starter Edition</h3>
+                <span class="h2">
+                  <strike>$39</strike> <strong>$33</strong>
+                </span>
+                <span class="label bg--primary">-15% Launch Offer</span>
+                <hr>
+                <ul>
+                  <li>
+                    <i class="icon icon--xs icon-Book"></i>
+                    &nbsp;
+                    <span>The ebook in PDF, HTML, MOBI and EPUB formats</span>
+                  </li>
+                  <li>
+                    <i class="icon icon--xs icon-Speach-Bubble"></i>
+                    &nbsp;
+                    <span>7 experts interviews</span>
+                  </li>
+                </ul>
+                <a class="btn btn--primary"
+                   href="https://gum.co/scapy-starter/scaling?wanted=true" data-gumroad-single-product="true">
+                  <span class="btn__text">
+                    Purchase
+                  </span>
+                </a>
+              </div>
+              <!--end of pricing-->
+            </div>
+          </div>
+          <!--end of row-->
+        </div>
+        <!--end of container-->
+      </section>
+      <!-- FAQ -->
+
+      <section class=" bg--dark text-center" id="faq">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+              <h2>Frequently Asked Questions</h2>
+            </div>
+          </div>
+          <!--end of row-->
+        </div>
+        <!--end of container-->
+      </section>
+
+      <section class=" bg--dark">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="feature feature-2 boxed boxed--border">
+                <i class="icon icon-Book color--primary"></i>
+                <div class="feature__body">
+                  <h4>I bought the paperback version. How do I get the
+                    electronic version?</h4>
+                  <p>
+                    Lulu is not able to do that for me. Therefore once you
+                    purchased your paperback copy,
+                    <a href="mailto:julien+scapy@danjou.info">forward me your
+                      receipt</a> and I'll get you the electronic version.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="feature feature-2 boxed boxed--border">
+                <i class="icon icon-Wrench color--primary"></i>
+                <div class="feature__body">
+                  <h4>Is this book about hacking?</h4>
+                  <p>
+                    You need to read
+                    <a href="https://en.wikipedia.org/wiki/Hacker">Wikipedia
+                      definition of hacker</a>: <em>a hacker is any skilled
+                      computer expert that uses their technical knowledge to
+                      overcome a problem</em>.
+                    <br>
+                    In that sense, it is.
+                  </p>
+                </div>
+              </div>
+              <!--end feature-->
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="feature feature-2 boxed boxed--border">
+                <i class="icon icon-Handshake color--primary"></i>
+                <div class="feature__body">
+                  <h4>What if the book is not for me?</h4>
+                  <p>
+                    If you think the book has no value to you, then I don't
+                    want your money.
+                    <a href="mailto:julien+scapy@danjou.info">Ask me for a
+                    refund</a>.
+                  </p>
+                </div>
+              </div>
+              <!--end feature-->
+            </div>
+            <!--end feature-->
+            <div class="col-sm-6">
+              <div class="feature feature-2 boxed boxed--border">
+                <i class="icon icon-MaleFemale color--primary"></i>
+                <div class="feature__body">
+                  <h4>I need a license for more than 10 users.</h4>
+                  <p>
+                    Let's discuss this over
+                    <a href="mailto:julien+scapy@danjou.info">email</a>.
+                  </p>
+                </div>
+              </div>
+              <!--end feature-->
+            </div>
+          </div>
+          <!--end of row-->
+          <br>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="feature feature-2 boxed boxed--border">
+                <i class="icon icon-Upload color--primary"></i>
+                <div class="feature__body">
+                  <h4>Can I upgrade to another package?</h4>
+                  <p>
+                    Yes. Just
+                    <a href="mailto:julien+scapy@danjou.info">send me an email</a>
+                    and I'll get you setup.
+                  </p>
+                </div>
+              </div>
+              <!--end feature-->
+            </div>
+            <!--end feature-->
+            <div class="col-sm-6">
+              <div class="feature feature-2 boxed boxed--border">
+                <i class="icon icon-Mail color--primary"></i>
+                <div class="feature__body">
+                  <h4>I have another question!</h4>
+                  <p>
+                    Send me an
+                    <a href="mailto:julien+scapy@danjou.info">email</a>.
+                  </p>
+                </div>
+              </div>
+              <!--end feature-->
+            </div>
+          </div>
+          <!--end of row-->
+        </div>
+        <!--end of container-->
+      </section>
+
+      <section class="text-center bg--dark">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 col-md-6">
+              <div class="cta">
+                <h2>Ready to Choose Your Package?</h2>
+                <a class="btn btn--primary type--uppercase inner-link" href="#packages">
+                  <span class="btn__text">
+                    Purchase Scaling Python
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!--end of row-->
+        </div>
+        <!--end of container-->
+      </section>
+
+      <footer class="footer-3 text-center-xs space--xs ">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6">
+            </div>
+            <div class="col-sm-6 text-right text-center-xs">
+              <ul class="social-list list-inline list--hover">
+                <li>
+                  <a href="https://julien.danjou.info">
+                    <i class="icon-Male icon icon--xs"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:julien+scapy@danjou.info">
+                    <i class="icon-Mail icon icon--xs"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://twitter.com">
+                    <i class="icon-Twitter icon icon--xs"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.facebook.com/julien.danjou">
+                    <i class="icon-Facebook icon icon--xs"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!--end of row-->
+          <div class="row">
+            <div class="col-sm-6">
+              <p class="type--fine-print">
+              </p>
+            </div>
+            <div class="col-sm-6 text-right text-center-xs">
+              <span class="type--fine-print">&copy;
+                <span class="update-year"></span> <a href="mailto:julien+scapy@danjou.info">Julien Danjou</a></span>
+            </div>
+          </div>
+          <!--end of row-->
+        </div>
+        <!--end of container-->
+      </footer>
     </div>
-
-    <!-- FAILURE - MESSAGE NOT SEND -->
-    <div class="modal fade" id="FormFailure" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-body">
-            <p class="formModal">
-              <span class="elegant error icon_error-circle"></span><br/>
-              <span class="desc">Oops!</span><br/>
-              <!-- MODAL CONTENT SMALL -->
-              Please check the fields and try again.
-            </p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary btn-ok" data-dismiss="modal">Ok, I'll try again</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <footer>
-      <div class="container">
-        <div class="col-sm-3 col-xs-12"></div>
-        <div class="col-sm-6">
-          <a href="https://facebook.com/TheHackerGuideToPython">
-            <div class="sm">
-              <span class="elegant social_facebook"></span>
-            </div>
-          </a>
-          <a href="https://twitter.com/juldanjou">
-            <div class="sm">
-              <span class="elegant social_twitter"></span>
-            </div>
-          </a>
-          <a href="https://plus.google.com/+JulienDanjou">
-            <div class="sm">
-              <span class="elegant social_googleplus"></span>
-            </div>
-          </a>
-        </div>
-        <div class="col-sm-3 col-xs-12">© 2016 all rights reserved.</div>
-      </div>
-    </footer>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="js/smoothscroll.min.js"></script>
-    <script type="text/javascript" src="js/validator.min.js"></script>
-    <script type="text/javascript" src="js/alive.scripts.min.js"></script>
-
+    <!--<div class="loader"></div>-->
+    <a class="back-to-top inner-link" href="#start" data-scroll-class="100vh:active">
+      <i class="stack-interface stack-up-open-big"></i>
+    </a>
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/smooth-scroll.min.js"></script>
+    <script src="js/scripts.min.js"></script>
+    <script type="text/javascript" src="https://gumroad.com/js/gumroad.js"></script>
     <script type="text/javascript">
-    function checkSampleSent (data) {
-      if(data.status == "created") {
-        $("#FormSuccess").modal();
-        ga('send', 'event', 'ScaPy', 'LaunchList', 'OK');
-        $.getScript("https://www.googleadservices.com/pagead/conversion.js");
-      } else {
-        $("#FormFailure").modal();
-        ga('send', 'event', 'ScaPy', 'LaunchList', 'ERROR');
-      }
-    }
-
-    function sampleSentFailure () {
-        $("#FormFailure").modal();
-    }
-
-    function sendSample(event) {
-        event.preventDefault()
-        var subscribe_course = $("#input-course").prop("checked");
-        $.ajax({
-            url: "https://api.convertkit.com/landing_pages/119473/subscribe",
-            type: 'POST',
-            data: JSON.stringify({
-                action: "subscribe",
-                email: $("input#email").val(),
-                first_name: $("input#name").val(),
-                fname: $("input#name").val(),
-                form: "Scaling Python Launch",
-                id: "119473",
-                message: "created",
-                status: "created",
-                subscription_status: "active"
-            }),
-            contentType: "application/json; charset=utf-8",
-            success: checkSampleSent,
-            error: sampleSentFailure
-        });
-    }
-
-    $('form#contact-form').validator().on('submit', function (e) {
-      if (!e.isDefaultPrevented()) {
-        return sendSample(e);
-      }
-    })
+      ga('require', 'linker');
+      ga('linker:autoLink', ['gumroad.com'] );
     </script>
-
   </body>
 </html>
