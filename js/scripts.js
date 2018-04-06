@@ -405,8 +405,8 @@ mr = (function (mr, $, window, document){
             accordion.css('min-height',minHeight);
         });
 
-        if(window.location.hash !== '' && window.location.hash !== '#'){
-            if($('.accordion li'+$(this).attr('href')).length){
+        if(window.location.hash !== '' && window.location.hash !== '#' && window.location.hash.match(/#\/.*/) === null){
+            if($('.accordion > li > .accordion__title'+window.location.hash).length){
                  mr.accordions.activatePanelById(window.location.hash, true);
             }
         }
@@ -884,7 +884,7 @@ mr = (function (mr, $, window, document){
                 // Create a captcha div and insert it before the submit button.
                 $insertBefore = $thisForm.find('button[type=submit]').closest('[class*="col-"]');
                 $captchaDiv   = jQuery('<div>').addClass('recaptcha');
-                $column       = jQuery('<div>').addClass('col-xs-12').append($captchaDiv);
+                $column       = jQuery('<div>').addClass('col-12').append($captchaDiv);
                 $column.insertBefore($insertBefore);
             }
 
