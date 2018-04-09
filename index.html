@@ -30,6 +30,54 @@
   </head>
   <body class=" ">
     <a id="start"></a>
+    <nav id="menu-bar" class="sticky-top bar bar--sm bar-1 bg--dark hidden-xs ">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-1 col-md-2 hidden-xs">
+            <div class="bar__module">
+              <a href="/">
+                <img class="logo logo-dark" alt="logo" src="img/scapy-logo.png">
+                <img class="logo logo-light" alt="logo" src="img/scapy-logo.png">
+              </a>
+            </div>
+            <!--end module-->
+          </div>
+          <div class="col-lg-11 col-md-12 text-right text-left-xs text-left-sm">
+            <div class="bar__module">
+              <ul class="menu-horizontal text-left">
+                <li>
+                  <a class="inner-link" href="#toc">Table of Contents</a>
+                </li>
+                <li>
+                  <a class="inner-link" href="#experts">Experts List</a>
+                </li>
+                <li>
+                  <a class="inner-link" href="#testimonials">
+                    Testimonials
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!--end module-->
+            <div class="bar__module">
+              <a class="btn btn--sm type--uppercase inner-link" href="#sample-chapter">
+                <span class="btn__text">
+                  Get the sample chapter
+                </span>
+              </a>
+              <a class="btn btn--sm btn--primary type--uppercase inner-link" href="#packages">
+                <span class="btn__text">
+                  Buy Now
+                </span>
+              </a>
+            </div>
+            <!--end module-->
+          </div>
+        </div>
+        <!--end of row-->
+      </div>
+      <!--end of container-->
+    </nav>
     <div class="main-container">
       <section class="text-center switchable cta cta-3 bg--dark">
         <div class="container">
@@ -42,7 +90,7 @@
                   Thanks Julien!” – Igor Subira</blockquote>
                 </p>
                 <br>
-                <a class="btn btn--primary type--uppercase" href="#packages">
+                <a class="btn btn--primary type--uppercase inner-link" href="#packages">
                   <span class="btn__text">
                     Buy Now
                   </span>
@@ -347,10 +395,10 @@
           <!--end of row-->
         </div>
         <!--end of container-->
-
       </section>
 
-      <section class="text-center ">
+      <a id="toc"></a>
+      <section class="text-center">
         <div class="container">
           <div class="row">
             <div class="col-md-10 col-lg-8">
@@ -466,6 +514,7 @@
         </div>
       </section>
 
+      <a id="experts"></a>
       <section class="text-center">
         <div class="container">
           <div class="row">
@@ -647,6 +696,7 @@
         <!--end of container-->
       </section>
 
+      <a id="testimonials"></a>
       <section class=" bg--dark text-center">
         <div class="container">
           <div class="row">
@@ -721,7 +771,8 @@
       </section>
 
 
-      <section class="text-center" id="packages">
+      <a id="packages"></a>
+      <section class="text-center">
         <div class="container">
           <div class="row">
             <div class="col-md-10 col-lg-8">
@@ -933,11 +984,12 @@
         <!--end of container-->
       </section>
 
+      <a id="sample-chapter"></a>
       <section class=" bg--secondary imageblock feature-large">
         <div class="container">
           <div class="row">
             <div class="col-md-8 col-sm-6">
-              <h2 id="sample-chapter">Get the sample chapter</h2>
+              <h2>Get the sample chapter</h2>
               <p class="lead">
                 Not convinced yet? Get the table of contents and read the beginning of the book for free:
               </p>
